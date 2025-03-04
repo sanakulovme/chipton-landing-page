@@ -1,8 +1,12 @@
 
+interface SignUpData {
+  password: string;
+  email: string;
+}
 
 class Auth {
-  static sign_up = async (data) => {
-    const url = "http://api.chipton.uz/api/v1/auth/sign-up";
+  static sign_up = async (data: SignUpData) => {
+    const url = "https://api.agron.uz/api/v1/auth/sign-up";
     try {
       const response = await fetch(url, {
         method: "POST",
