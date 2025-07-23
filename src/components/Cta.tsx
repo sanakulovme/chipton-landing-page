@@ -1,5 +1,4 @@
-
-export const Cta = () => {
+const CTA: React.FC = () => {
   return (
     <>
       {/* ====== CTA Section Start */}
@@ -100,3 +99,5 @@ export const Cta = () => {
     </>
   );
 };
+
+export default CTA;

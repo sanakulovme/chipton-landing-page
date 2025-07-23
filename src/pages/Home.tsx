@@ -10,7 +10,7 @@ import { Testimonials } from "../components/Testimonials";
 import { Contact } from "../components/Contact";
 import { Brands } from "../components/Brands";
 
-function Home() {
+const Home: React.FC = () => {
   return (
     <>
       <Hero />
@@ -26,6 +26,6 @@ function Home() {
       {/* <BackToTop /> */}
     </>
   );
-}
+};
 
 export default Home;

@@ -339,5 +339,6 @@ export const Testimonials = () => {
       </section>
       {/* ====== Testimonial Section End */}
     </>
-  );
 };
+
+export default Testimonials;
