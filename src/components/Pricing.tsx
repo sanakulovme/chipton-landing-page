@@ -54,7 +54,7 @@ export const Pricing = () => {
                   </div>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition hover:bg-blue-dark"
                 >
                   Purchase Now
@@ -96,7 +96,7 @@ export const Pricing = () => {
                   </div>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition hover:bg-blue-dark"
                 >
                   Purchase Now
@@ -135,7 +135,7 @@ export const Pricing = () => {
                   </div>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="#"
                   className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition hover:bg-blue-dark"
                 >
                   Purchase Now

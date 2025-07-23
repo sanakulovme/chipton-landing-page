@@ -262,7 +262,7 @@ export const Team = () => {
                   </p>
                   <div className="flex items-center justify-center gap-5">
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -280,7 +280,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -298,7 +298,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -458,7 +458,7 @@ export const Team = () => {
                   </p>
                   <div className="flex items-center justify-center gap-5">
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -476,7 +476,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -494,7 +494,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -654,7 +654,7 @@ export const Team = () => {
                   </p>
                   <div className="flex items-center justify-center gap-5">
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -672,7 +672,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -690,7 +690,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -850,7 +850,7 @@ export const Team = () => {
                   </p>
                   <div className="flex items-center justify-center gap-5">
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -868,7 +868,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
@@ -886,7 +886,7 @@ export const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="javascript:void(0)"
+                      href="#"
                       className="text-dark-6 hover:text-primary"
                     >
                       <svg
