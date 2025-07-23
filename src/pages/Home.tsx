@@ -3,34 +3,27 @@ import { Cta } from "../components/Cta";
 import { FAQ } from "../components/FAQ";
 import { Features } from "../components/Features";
 import { Hero } from "../components/Hero";
-import { HowItWorks } from "../components/HowItWorks";
-import { Newsletter } from "../components/Newsletter";
 import { Pricing } from "../components/Pricing";
-import { ScrollToTop } from "../components/ScrollToTop";
-import { Services } from "../components/Services";
-import { Sponsors } from "../components/Sponsors";
+import { BackToTop } from "../components/BackToTop";
 import { Team } from "../components/Team";
 import { Testimonials } from "../components/Testimonials";
-import { Navbar } from "../components/Navbar";
-import "../App.css";
+import { Contact } from "../components/Contact";
+import { Brands } from "../components/Brands";
 
 function Home() {
   return (
     <>
-      <Navbar />
       <Hero />
-      <Sponsors />
-      <About />
-      <HowItWorks />
       <Features />
-      <Services />
+      {/*<Brands />*/}
+      <About />
       <Cta />
-      <Testimonials />
-      <Team />
       <Pricing />
-      <Newsletter />
+      {/*<Testimonials />*/}
       <FAQ />
-      <ScrollToTop />
+      {/*<Team />*/}
+      <Contact />
+      {/* <BackToTop /> */}
     </>
   );
 }

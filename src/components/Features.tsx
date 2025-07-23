@@ -1,99 +1,116 @@
-import { Badge } from "./ui/badge";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import image from "../assets/growth.png";
-import image3 from "../assets/reflecting.png";
-import image4 from "../assets/looking-ahead.png";
-
-interface FeatureProps {
-  title: string;
-  description: string;
-  image: string;
-}
-
-const features: FeatureProps[] = [
-  {
-    title: "Responsive Design",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image4,
-  },
-  {
-    title: "Intuitive user interface",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image3,
-  },
-  {
-    title: "AI-Powered insights",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image,
-  },
-];
-
-const featureList: string[] = [
-  "Dark/Light theme",
-  "Reviews",
-  "Features",
-  "Pricing",
-  "Contact form",
-  "Our team",
-  "Responsive design",
-  "Newsletter",
-  "Minimalist",
-];
+// Icons
+import Gift from "../icons/Gift";
+import Table from "../icons/Table";
+import Layer from "../icons/Layer";
+import Apps from "../icons/Apps";
 
 export const Features = () => {
   return (
-    <section
-      id="features"
-      className="container py-24 sm:py-32 space-y-8"
-    >
-      <h2 className="text-3xl lg:text-4xl font-bold md:text-center">
-        Many{" "}
-        <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Great Features
-        </span>
-      </h2>
-
-      <div className="flex flex-wrap md:justify-center gap-4">
-        {featureList.map((feature: string) => (
-          <div key={feature}>
-            <Badge
-              variant="secondary"
-              className="text-sm"
-            >
-              {feature}
-            </Badge>
+    <>
+      {/* ====== Features Section Start */}
+      <section id="features" className="pb-8 pt-20 dark:bg-dark lg:pb-[70px] lg:pt-[120px]">
+        <div className="container">
+          <div className="-mx-4 flex flex-wrap">
+            <div className="w-full px-4">
+              <div className="mx-auto mb-12 max-w-[485px] text-center lg:mb-[70px]">
+                <span className="mb-2 block text-lg font-semibold text-primary">
+                  Features
+                </span>
+                <h2 className="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
+                  Main Features Of Play
+                </h2>
+                <p className="text-base text-body-color dark:text-dark-6">
+                  There are many variations of passages of Lorem Ipsum available but
+                  the majority have suffered alteration in some form.
+                </p>
+              </div>
+            </div>
           </div>
-        ))}
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map(({ title, description, image }: FeatureProps) => (
-          <Card key={title}>
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
-            </CardHeader>
-
-            <CardContent>{description}</CardContent>
-
-            <CardFooter>
-              <img
-                src={image}
-                alt="About feature"
-                className="w-[200px] lg:w-[300px] mx-auto"
-              />
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
-    </section>
+          <div className="-mx-4 flex flex-wrap">
+            <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+              <div style={{flexDirection: 'column'}} className="flex items-center text-center text-center wow fadeInUp group mb-12" data-wow-delay=".1s">
+                <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
+                  <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
+                  <Gift />
+                </div>
+                <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
+                  Free and Open-Source
+                </h4>
+                <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+                  Lorem Ipsum is simply dummy text of the printing and industry.
+                </p>
+                <a
+                  href="#"
+                  className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+              <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".15s">
+                <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
+                  <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
+                  <Table />
+                </div>
+                <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
+                  Multipurpose Template
+                </h4>
+                <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+                  Lorem Ipsum is simply dummy text of the printing and industry.
+                </p>
+                <a
+                  href="#"
+                  className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+              <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".2s">
+                <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
+                  <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
+                  <Layer />
+                </div>
+                <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
+                  High-quality Design
+                </h4>
+                <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+                  Lorem Ipsum is simply dummy text of the printing and industry.
+                </p>
+                <a
+                  href="#"
+                  className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div className="w-full px-4 md:w-1/2 lg:w-1/4">
+              <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".25s">
+                <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
+                  <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
+                  <Apps />
+                </div>
+                <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
+                  All Essential Elements
+                </h4>
+                <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
+                  Lorem Ipsum is simply dummy text of the printing and industry.
+                </p>
+                <a
+                  href="#"
+                  className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* ====== Features Section End */}
+    </>
   );
 };
