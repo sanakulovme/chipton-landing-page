@@ -1,5 +1,5 @@
 import { About } from "../components/About";
-import { Cta } from "../components/Cta";
+// import { Cta } from "../components/Cta";
 import { FAQ } from "../components/FAQ";
 import { Features } from "../components/Features";
 import { Hero } from "../components/Hero";
@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       <Features />
       {/*<Brands />*/}
       <About />
-      <Cta />
+      {/*<Cta />*/}
       <Pricing />
       {/*<Testimonials />*/}
       <FAQ />

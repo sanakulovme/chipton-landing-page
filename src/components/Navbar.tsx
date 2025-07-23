@@ -16,6 +16,7 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handle dark mode detection
   useEffect(() => {
     const checkDarkMode = () => {
       setIsDarkMode(document.documentElement.classList.contains('dark'));
@@ -53,28 +54,9 @@ export const Navbar = () => {
   };
 
   // Determine logo source
-  const logoSrc = isDarkMode || !isSticky
-    ? '/assets/images/logo/logo-white.svg'
-    : '/assets/images/logo/logo.svg';
-
-  const dropdownLinks = [
-    { href: 'about', label: 'About Page' },
-    { href: 'pricing', label: 'Pricing Page' },
-    { href: 'contact', label: 'Contact Page' },
-    { href: 'blog-grids', label: 'Blog Grid Page' },
-    { href: 'blog-details', label: 'Blog Details Page' },
-    { href: 'signup', label: 'Sign Up Page' },
-    { href: 'signin', label: 'Sign In Page' },
-    { href: '404', label: '404 Page' },
-  ];
-
-  const navLinks = [
-    { href: '#about', label: "Tizim haqida" },
-    { href: '#features', label: "Qulayliklar" },
-    { href: '#pricing', label: "Narx" },
-    { href: '#contact', label: "Aloqa" },
-    { href: '#faq', label: "Savollar" },
-  ];
+  const logoSrc = isSticky || isDarkMode
+    ? '/assets/images/logo/logo.svg'
+    : '/assets/images/logo/logo-white.svg';
 
   return (
     <>
@@ -102,9 +84,19 @@ export const Navbar = () => {
                   <span className="relative my-[6px] block h-[2px] w-[30px] bg-white" />
                   <span className="relative my-[6px] block h-[2px] w-[30px] bg-white" />
                 </button>
-                <nav id="navbarCollapse" className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:px-4 lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6 ${isNavOpen ? 'block' : 'hidden'}`}>
-                  <ul className=" text-center block lg:flex 2xl:ml-20">
-                    { navLinks.map((item) => (
+                <nav
+                  id="navbarCollapse"
+                  className={`absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:px-4 lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6 ${isNavOpen ? 'block' : 'hidden'}`}
+                >
+                  <ul className="block lg:flex 2xl:ml-20">
+                    {[
+                      { href: '#home', label: 'Home' },
+                      { href: '#about', label: 'About' },
+                      { href: '#pricing', label: 'Pricing' },
+                      { href: '#team', label: 'Team' },
+                      { href: '#contact', label: 'Contact' },
+                      { href: 'blog-grids.html', label: 'Blog' },
+                    ].map((item) => (
                       <li key={item.href} className="group relative">
                         <a
                           href={item.href}
@@ -115,8 +107,12 @@ export const Navbar = () => {
                         </a>
                       </li>
                     ))}
-                    {/*<li className="submenu-item group relative">
-                      <a href="#" className="relative mx-8 flex items-center justify-between py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-8 lg:mr-0 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10" onClick={toggleSubmenu}>
+                    <li className="submenu-item group relative">
+                      <a
+                        href="javascript:void(0)"
+                        className="relative mx-8 flex items-center justify-between py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-8 lg:mr-0 lg:inline-flex lg:py-6 lg:pl-0 lg:pr-4 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
+                        onClick={toggleSubmenu}
+                      >
                         Pages
                         <svg
                           className="ml-2 fill-current"
@@ -129,8 +125,19 @@ export const Navbar = () => {
                           <path d="M7.99999 14.9C7.84999 14.9 7.72499 14.85 7.59999 14.75L1.84999 9.10005C1.62499 8.87505 1.62499 8.52505 1.84999 8.30005C2.07499 8.07505 2.42499 8.07505 2.64999 8.30005L7.99999 13.525L13.35 8.25005C13.575 8.02505 13.925 8.02505 14.15 8.25005C14.375 8.47505 14.375 8.82505 14.15 9.05005L8.39999 14.7C8.27499 14.825 8.14999 14.9 7.99999 14.9Z" />
                         </svg>
                       </a>
-                      <div className={`submenu relative left-0 top-full w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${openSubmenu ? 'block' : 'hidden lg:opacity-0'}`}>
-                        { dropdownLinks.map((item) => (
+                      <div
+                        className={`submenu relative left-0 top-full w-[250px] rounded-sm bg-white p-4 transition-[top] duration-300 group-hover:opacity-100 dark:bg-dark-2 lg:invisible lg:absolute lg:top-[110%] lg:shadow-lg lg:group-hover:visible lg:group-hover:top-full ${openSubmenu ? 'block' : 'hidden lg:opacity-0'}`}
+                      >
+                        {[
+                          { href: 'about.html', label: 'About Page' },
+                          { href: 'pricing.html', label: 'Pricing Page' },
+                          { href: 'contact.html', label: 'Contact Page' },
+                          { href: 'blog-grids.html', label: 'Blog Grid Page' },
+                          { href: 'blog-details.html', label: 'Blog Details Page' },
+                          { href: 'signup.html', label: 'Sign Up Page' },
+                          { href: 'signin.html', label: 'Sign In Page' },
+                          { href: '404.html', label: '404 Page' },
+                        ].map((item) => (
                           <a
                             key={item.href}
                             href={item.href}
@@ -141,7 +148,7 @@ export const Navbar = () => {
                           </a>
                         ))}
                       </div>
-                    </li>*/}
+                    </li>
                   </ul>
                 </nav>
               </div>
@@ -202,19 +209,18 @@ export const Navbar = () => {
                 </label>
                 <div className="hidden sm:flex">
                   <a
-                    href="https://app.chipton.uz/login"
+                    href="signin.html"
                     className="loginBtn px-[22px] py-2 text-base font-medium text-white hover:opacity-70"
                     onClick={closeNavbar}
                   >
-                    Kirish
+                    Sign In
                   </a>
                   <a
-                    href="/signup"
-                    target="_blank"
+                    href="signup.html"
                     className="signUpBtn rounded-md bg-white bg-opacity-20 px-6 py-2 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
                     onClick={closeNavbar}
                   >
-                    Ro'yxatdan o'tish
+                    Sign Up
                   </a>
                 </div>
               </div>
@@ -226,105 +232,3 @@ export const Navbar = () => {
     </>
   );
 };
-=======
-  return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
-    }`}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <a href="#" className="flex items-center">
-              <GraduationCap className={`h-8 w-8 ${isScrolled ? 'text-blue-600' : 'text-white'}`} />
-              <span className={`ml-2 text-xl font-bold ${isScrolled ? 'text-gray-800' : 'text-white'}`}>CertifyEdu</span>
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-blue-500 ${
-                  isScrolled ? 'text-gray-700' : 'text-white'
-                }`}
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
-
-          <div className="hidden md:flex items-center">
-            <a
-              href="#"
-              className={`text-sm font-medium mr-4 transition-colors ${
-                isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-200'
-              }`}
-            >
-              Log in
-            </a>
-            <a
-              href="#"
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg shadow-sm hover:bg-blue-700 transition-colors"
-            >
-              Get Started
-            </a>
-          </div>
-
-          {/* Mobile Navigation Toggle */}
-          <div className="md:hidden">
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-md ${
-                isScrolled ? 'text-gray-700' : 'text-white'
-              }`}
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open menu</span>
-              {isMenuOpen ? (
-                <X className="h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="h-6 w-6" aria-hidden="true" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile menu */}
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-b-lg">
-            {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-md"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-            <a
-              href="#"
-              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 rounded-md"
-            >
-              Log in
-            </a>
-            <a
-              href="#"
-              className="block px-3 py-2 mt-4 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md"
-            >
-              Get Started
-            </a>
-          </div>
-        </div>
-      )}
-    </header>
-  );
-};
-
-export default Navbar;
->>>>>>> 3d5b52e0bc3f70e79a08c63b2dda40798de85d1b
