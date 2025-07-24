@@ -58,8 +58,8 @@ export const Navbar = () => {
   // Determine logo source
   const logoSrc =
     !isDarkMode && isSticky
-      ? "../assets/images/logo/logo.svg"
-      : "../assets/images/logo/logo-white.svg";
+      ? "/images/logo/logo.svg"
+      : "/images/logo/logo-white.svg";
 
   const navBars = [
     { href: "#about", label: "Tizim" },

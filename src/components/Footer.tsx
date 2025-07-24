@@ -16,7 +16,7 @@ export const Footer = () => {
               <div className="w-full mb-10">
                 <a href="#" className="mb-6 inline-block max-w-[160px]">
                   <img
-                    src="assets/images/logo/logo-white.svg"
+                    src="/images/logo/logo-white.svg"
                     alt="logo"
                     className="max-w-full"
                   />
@@ -210,7 +210,7 @@ export const Footer = () => {
                   >
                     <div className="overflow-hidden rounded">
                       <img
-                        src="./assets/images/blog/blog-footer-01.jpg"
+                        src="/images/blog/blog-footer-01.jpg"
                         alt="blog"
                       />
                     </div>
@@ -224,7 +224,7 @@ export const Footer = () => {
                   >
                     <div className="overflow-hidden rounded">
                       <img
-                        src="./assets/images/blog/blog-footer-02.jpg"
+                        src="/images/blog/blog-footer-02.jpg"
                         alt="blog"
                       />
                     </div>
@@ -284,10 +284,10 @@ export const Footer = () => {
         </div>
         <div>
           <span className="absolute left-0 top-0 z-[-1]">
-            <img src="assets/images/footer/shape-1.svg" alt="" />
+            <img src="/images/footer/shape-1.svg" alt="" />
           </span>
           <span className="absolute bottom-0 right-0 z-[-1]">
-            <img src="assets/images/footer/shape-3.svg" alt="" />
+            <img src="/images/footer/shape-3.svg" alt="" />
           </span>
           <span className="absolute right-0 top-0 z-[-1]">
             <Shape1 />
