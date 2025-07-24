@@ -9,10 +9,14 @@ import { Team } from "../components/Team";
 import { Testimonials } from "../components/Testimonials";
 import { Contact } from "../components/Contact";
 import { Brands } from "../components/Brands";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
+
 
 const Home: React.FC = () => {
   return (
     <>
+      <Navbar />
       <Hero />
       <Features />
       {/*<Brands />*/}
@@ -24,6 +28,7 @@ const Home: React.FC = () => {
       {/*<Team />*/}
       <Contact />
       {/* <BackToTop /> */}
+      <Footer />
     </>
   );
 };

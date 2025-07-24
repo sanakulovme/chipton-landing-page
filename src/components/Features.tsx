@@ -1,7 +1,5 @@
 // Icons
-import Gift from "../icons/Gift";
-import Table from "../icons/Table";
-import Layer from "../icons/Layer";
+import { Clock, DollarSign, UserPlus } from 'lucide-react';
 import Apps from "../icons/Apps";
 
 export const Features = () => {
@@ -31,13 +29,13 @@ export const Features = () => {
               <div style={{flexDirection: 'column'}} className="flex items-center text-center text-center wow fadeInUp group mb-12" data-wow-delay=".1s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
-                  <Gift />
+                  <Clock className='text-white' size='37' />
                 </div>
                 <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                  Free and Open-Source
+                  Vaqtni tejang
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Sertifikat yaratish vaqtini 90% ga qisqartiring. Malumotlar bilan ishlash juda tez
                 </p>
                 <a
                   href="#"
@@ -51,13 +49,13 @@ export const Features = () => {
               <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".15s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
-                  <Table />
+                  <UserPlus size="35" color="#fff" />
                 </div>
                 <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                  Multipurpose Template
+                  Raqamli davomat
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Talabalaringizning kunlik davomatini boshqarish, tahlil qilish va aniq haftalik, oylik statistika
                 </p>
                 <a
                   href="#"
@@ -71,13 +69,13 @@ export const Features = () => {
               <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".2s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
-                  <Layer />
+                  <DollarSign size="37" color='#fff' />
                 </div>
                 <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                  High-quality Design
+                  Moliyaviy aniqlik
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Har oyda moliyaviy hisobotlarni tahlil qilish va boshqarish. Foydaning kurslar miqiyosida taqsimlash
                 </p>
                 <a
                   href="#"
@@ -94,10 +92,10 @@ export const Features = () => {
                   <Apps />
                 </div>
                 <h4 className="mb-3 text-xl font-bold text-dark dark:text-white">
-                  All Essential Elements
+                  Tartibli boshqaruv
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Lorem Ipsum is simply dummy text of the printing and industry.
+                  Darslarni rejalashtirish, o'qituvchilar va talabalar haqidagi ma'lumotlarni oson boshqarish
                 </p>
                 <a
                   href="#"
