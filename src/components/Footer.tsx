@@ -3,7 +3,6 @@ import Shape1 from "../icons/Shape1";
 import { Instagram, Facebook, Youtube } from "lucide-react";
 
 export const Footer = () => {
-
   return (
     <>
       {/* ====== Footer Section Start */}
@@ -20,7 +19,7 @@ export const Footer = () => {
                   />
                 </a>
                 <p className="mb-8 max-w-[270px] text-base text-gray-7">
-                  O'quv markazlar uchun avtomatlashgan CRM tizimi.
+                  O‘quv markazlari uchun avtomatlashtirilgan CRM tizimi.
                 </p>
                 <div className="flex items-center -mx-3">
                   <a href="#" className="px-3 text-gray-7 hover:text-white">
@@ -40,38 +39,26 @@ export const Footer = () => {
             </div>
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="w-full mb-10">
-                <h4 className="text-lg font-semibold text-white mb-9">About Us</h4>
+                <h4 className="text-lg font-semibold text-white mb-9">Biz haqimizda</h4>
                 <ul>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      Home
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Bosh sahifa
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      Features
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Xususiyatlar
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      About
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Loyihamiz
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      Testimonial
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Fikrlar
                     </a>
                   </li>
                 </ul>
@@ -79,38 +66,26 @@ export const Footer = () => {
             </div>
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
               <div className="w-full mb-10">
-                <h4 className="text-lg font-semibold text-white mb-9">Features</h4>
+                <h4 className="text-lg font-semibold text-white mb-9">Xizmatlar</h4>
                 <ul>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      How it works
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Qanday ishlaydi
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      Privacy policy
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Maxfiylik siyosati
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      Terms of Service
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Foydalanish shartlari
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
-                      Refund policy
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Qaytarish siyosati
                     </a>
                   </li>
                 </ul>
@@ -118,39 +93,25 @@ export const Footer = () => {
             </div>
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
               <div className="w-full mb-10">
-                <h4 className="text-lg font-semibold text-white mb-9">
-                  Our Products
-                </h4>
+                <h4 className="text-lg font-semibold text-white mb-9">Mahsulotlarimiz</h4>
                 <ul>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                       LineIcons
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                       Ecommerce HTML
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                       TailAdmin
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="#"
-                      className="inline-block mb-3 text-base text-gray-7 hover:text-primary"
-                    >
+                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
                       PlainAdmin
                     </a>
                   </li>
@@ -159,36 +120,22 @@ export const Footer = () => {
             </div>
             <div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
               <div className="w-full mb-10">
-                <h4 className="text-lg font-semibold text-white mb-9">
-                  Latest blog
-                </h4>
+                <h4 className="text-lg font-semibold text-white mb-9">So‘nggi maqolalar</h4>
                 <div className="flex flex-col gap-8">
-                  <a
-                    href="blog-details.html"
-                    className="group flex items-center gap-[22px]"
-                  >
+                  <a href="blog-details.html" className="group flex items-center gap-[22px]">
                     <div className="overflow-hidden rounded">
-                      <img
-                        src="/images/blog/blog-footer-01.jpg"
-                        alt="blog"
-                      />
+                      <img src="/images/blog/blog-footer-01.jpg" alt="blog" />
                     </div>
                     <span className="max-w-[180px] text-base text-gray-7 group-hover:text-white">
-                      I think really important to design with...
+                      Dizayn qilishda e’tiborli bo‘lish muhim...
                     </span>
                   </a>
-                  <a
-                    href="blog-details.html"
-                    className="group flex items-center gap-[22px]"
-                  >
+                  <a href="blog-details.html" className="group flex items-center gap-[22px]">
                     <div className="overflow-hidden rounded">
-                      <img
-                        src="/images/blog/blog-footer-02.jpg"
-                        alt="blog"
-                      />
+                      <img src="/images/blog/blog-footer-02.jpg" alt="blog" />
                     </div>
                     <span className="max-w-[180px] text-base text-gray-7 group-hover:text-white">
-                      Recognizing the need is the primary...
+                      Zaruratni anglash – bu birinchi qadam...
                     </span>
                   </a>
                 </div>
@@ -202,23 +149,14 @@ export const Footer = () => {
               <div className="w-full px-4 md:w-2/3 lg:w-1/2">
                 <div className="my-1">
                   <div className="flex items-center justify-center -mx-3 md:justify-start">
-                    <a
-                      href="#"
-                      className="px-3 text-base text-gray-7 hover:text-white hover:underline"
-                    >
-                      Privacy policy
+                    <a href="#" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                      Maxfiylik siyosati
                     </a>
-                    <a
-                      href="#"
-                      className="px-3 text-base text-gray-7 hover:text-white hover:underline"
-                    >
-                      Legal notice
+                    <a href="#" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                      Yuridik ma’lumot
                     </a>
-                    <a
-                      href="#"
-                      className="px-3 text-base text-gray-7 hover:text-white hover:underline"
-                    >
-                      Terms of service
+                    <a href="#" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                      Foydalanish shartlari
                     </a>
                   </div>
                 </div>
@@ -227,13 +165,6 @@ export const Footer = () => {
                 <div className="flex justify-center my-1 md:justify-end">
                   <p className="text-base text-gray-7">
                     &copy; chipton.uz {new Date().getFullYear()} | Barcha huquqlar himoyalangan
-                    {/*<a
-                      href="#"
-                      rel="nofollow noopner"
-                      target="_blank"
-                      className="text-gray-1 hover:underline"
-                    >
-                    </a>*/}
                   </p>
                 </div>
               </div>

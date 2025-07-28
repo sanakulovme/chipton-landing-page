@@ -58,8 +58,8 @@ export const Navbar = () => {
   // Determine logo source
   const logoSrc =
     !isDarkMode && isSticky
-      ? "/images/logo/logo.svg"
-      : "/images/logo/logo-white.svg";
+      ? "/images/logo/favicon.png"
+      : "/images/logo/favicon.png";
 
   const navBars = [
     { href: "#about", label: "Tizim" },
@@ -94,7 +94,7 @@ export const Navbar = () => {
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4">
               <a href="index.html" className="navbar-logo block w-full py-5">
-                <img src={logoSrc} alt="logo" className="header-logo w-full" />
+                <img style={{width: '50px'}} src={logoSrc} alt="logo" className="header-logo w-full" />
               </a>
             </div>
             <div className="flex w-full items-center justify-between px-4">

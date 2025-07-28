@@ -36,12 +36,12 @@ export const Features = () => {
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
                   Sertifikat yaratish vaqtini 90% ga qisqartiring. Malumotlar bilan ishlash juda tez
                 </p>
-                <a
+                {/*<a
                   href="#"
                   className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   Learn More
-                </a>
+                </a>*/}
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -56,12 +56,12 @@ export const Features = () => {
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
                   Talabalaringizning kunlik davomatini boshqarish, tahlil qilish va aniq haftalik, oylik statistika
                 </p>
-                <a
+                {/*<a
                   href="#"
                   className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   Learn More
-                </a>
+                </a>*/}
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -76,12 +76,12 @@ export const Features = () => {
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
                   Har oyda moliyaviy hisobotlarni tahlil qilish va boshqarish. Foydaning kurslar miqiyosida taqsimlash
                 </p>
-                <a
+                {/*<a
                   href="#"
                   className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   Learn More
-                </a>
+                </a>*/}
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
@@ -96,12 +96,12 @@ export const Features = () => {
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
                   Darslarni rejalashtirish, o'qituvchilar va talabalar haqidagi ma'lumotlarni oson boshqarish
                 </p>
-                <a
+                {/*<a
                   href="#"
                   className="text-base font-medium text-dark hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   Learn More
-                </a>
+                </a>*/}
               </div>
             </div>
           </div>

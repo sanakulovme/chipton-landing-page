@@ -75,20 +75,6 @@ export const Contact = () => {
                   </div>
                   <div className="mb-[22px]">
                     <label
-                      htmlFor="email"
-                      className="mb-4 block text-sm text-body-color dark:text-dark-6"
-                    >
-                      Elektron pochta*
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="example@yourmail.com"
-                      className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-body-color placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-dark-6"
-                    />
-                  </div>
-                  <div className="mb-[22px]">
-                    <label
                       htmlFor="phone"
                       className="mb-4 block text-sm text-body-color dark:text-dark-6"
                     >
