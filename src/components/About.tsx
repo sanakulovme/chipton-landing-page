@@ -1,4 +1,4 @@
-import Vector1 from "../icons/vector1";
+import Vector1 from "../icons/Vector1";
 import Vector2 from "../icons/Vector2";
 import Vector3 from "../icons/Vector3";
 
