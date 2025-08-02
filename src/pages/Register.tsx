@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { GraduationCap, ArrowLeft } from 'lucide-react';
+import React, { useState } from "react";
+import { Eye, EyeOff, Mail, Lock, User, ArrowRight } from "lucide-react";
+import Loader from "../icons/Loader";
+import Banner from '../components/Banner';
+import "../index.css";
 
-const Register: React.FC = () => {
+// API [server]
+import { Auth } from "../server/auth";
+
+const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    organization: '',
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
+  const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState({});
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -18,124 +25,210 @@ const Register: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle registration logic here
-    console.log('Form submitted:', formData);
+    setLoading(true);
+    setModal({});
+    try {
+      const response = await Auth.signUp(formData);
+      console.log(response);
+      if (response.ok) {
+        setModal({ success: response.message });
+        setFormData({});
+      } else {
+        setModal({ error: response.error });
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
-      <div className="container mx-auto px-4 py-8">
-        <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8">
-          <ArrowLeft className="h-5 w-5 mr-2" />
-          Bosh sahifaga qaytish
-        </Link>
-
-        <div className="max-w-md mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-          <div className="px-8 pt-6">
-            <div className="flex items-center justify-center mb-6">
-              <GraduationCap className="h-10 w-10 text-blue-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">Chipton.uz</span>
-            </div>
-            <h2 className="text-2xl font-bold text-center text-gray-900 mb-8">
-              Ro'yxatdan o'tish
-            </h2>
+    <div className="min-h-screen bg-gray-50 flex">
+      {/* Left Section - Form */}
+      <div className="flex-1 flex items-center justify-center p-8 lg:p-12">
+        <div className="w-full max-w-md mx-auto">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Akkaunt yarating
+            </h1>
+            <p className="text-gray-600">
+              Barcha qulayliklardan bugunoq foydalanishni boshlang!
+            </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="px-8 pb-8">
-            <div className="space-y-6">
-              <div>
-                <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
-                  To'liq ism
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 px-4 py-2"
-                  required
-                />
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {modal.success ? (
+              <div
+                className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 border border-green-300"
+                role="alert"
+              >
+                <span className="font-medium">Tayyor!</span> {modal.success}
               </div>
+            ) : null}
+            {modal.error ? (
+              <div
+                className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 border border-red-300"
+                role="alert"
+              >
+                <span className="font-medium">Xatolik!</span> {modal.error}
+              </div>
+            ) : null}
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
-                </label>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Email
+              </label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 px-4 py-2"
+                  className="outline-none w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
+                  placeholder="john@example.com"
                   required
                 />
               </div>
+            </div>
 
-              <div>
-                <label htmlFor="organization" className="block text-sm font-medium text-gray-700">
-                  Tashkilot nomi
-                </label>
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Parol
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
-                  type="text"
-                  id="organization"
-                  name="organization"
-                  value={formData.organization}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 px-4 py-2"
-                  required
-                />
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                  Parol
-                </label>
-                <input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   id="password"
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 px-4 py-2"
+                  className="outline-none w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
+                  placeholder="••••••••"
                   required
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  {showPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
+                </button>
               </div>
+            </div>
 
-              <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                  Parolni tasdiqlang
-                </label>
+            <div>
+              <label
+                htmlFor="confirmPassword"
+                className="block text-sm font-medium text-gray-700 mb-2"
+              >
+                Qayta kiriting
+              </label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
-                  type="password"
+                  type={showConfirmPassword ? "text" : "password"}
                   id="confirmPassword"
                   name="confirmPassword"
                   value={formData.confirmPassword}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-gray-50 px-4 py-2"
+                  className="outline-none w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
+                  placeholder="••••••••"
                   required
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                >
+                  {showConfirmPassword ? (
+                    <EyeOff className="w-5 h-5" />
+                  ) : (
+                    <Eye className="w-5 h-5" />
+                  )}
+                </button>
               </div>
-
-              <button
-                type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-              >
-                Ro'yxatdan o'tish
-              </button>
-
-              <p className="text-center text-sm text-gray-600">
-                Akkountingiz bormi?{' '}
-                <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
-                  Kirish
-                </Link>
-              </p>
             </div>
+
+            {/*<div className="flex items-center">
+              <input
+                id="terms"
+                name="terms"
+                type="checkbox"
+                className="outline-none h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                required
+              />
+              <label
+                htmlFor="terms"
+                className="ml-2 block text-sm text-gray-700"
+              >
+                Men{" "}
+                <a
+                  href="#"
+                  className="text-blue-600 hover:text-blue-500 font-medium"
+                >
+                  foydalanish shartlari
+                </a>{" "}
+                va{" "}
+                <a
+                  href="#"
+                  className="text-blue-600 hover:text-blue-500 font-medium"
+                >
+                  Maxfiylik siyosatiga
+                </a>{" "}
+                roziman
+              </label>
+            </div>*/}
+
+            <button
+              type="submit"
+              className={`${
+                loading ? "opacity-50" : ""
+              } w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center group`}
+            >
+              Yaratish
+              {loading ? (
+                <div className="ml-2">
+                  <Loader />
+                </div>
+              ) : (
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+              )}
+            </button>
           </form>
+
+          <div className="mt-6 text-center">
+            <p className="text-gray-600">
+              Akkauntingiz bormi?{" "}
+              <a
+                href="https://app.chipton.uz/login"
+                className="text-blue-600 hover:text-blue-500 font-medium"
+              >
+                Kirish
+              </a>
+            </p>
+          </div>
         </div>
+      </div>
+
+      {/* Right Section - Banner */}
+      <div className="hidden lg:block flex-1">
+        <Banner />
       </div>
     </div>
   );

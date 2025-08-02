@@ -1,0 +1,49 @@
+
+.loader-container{
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	z-index: 999;
+	background: azure;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+/* From Uiverse.io by satyamchaudharydev */
+.loader-container .loader {
+  display: block;
+  --height-of-loader: 5px;
+  --loader-color: #0071e2;
+  width: 150px;
+  height: var(--height-of-loader);
+  border-radius: 35px;
+  background-color: rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.loader-container .loader::before {
+  content: "";
+  position: absolute;
+  background: var(--loader-color);
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  border-radius: 30px;
+  animation: moving 1s ease-in-out infinite;
+  ;
+}
+
+@keyframes moving {
+  50% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+    right: 0;
+    left: unset;
+  }
+}
