@@ -5,9 +5,6 @@ import Loader from "../icons/Loader";
 import Banner from "../components/Banner";
 import { Auth } from "../server/auth";
 
-// Static CSS imports (recommended)
-import "../assets/css/loader.css";
-import "../index.css";
 
 // Define TypeScript interface for formData
 interface FormData {
@@ -30,11 +27,17 @@ const Register = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setPathLoad(false);
-    }, 2000);
+    if(pathname == '/signup'){
+      import ("../assets/css/loader.css");
+      import ("../index.css");
+      const timer = setTimeout(() => {
+        setPathLoad(false);
+      }, 2000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }else{
+      setPathLoad(false);
+    }
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
