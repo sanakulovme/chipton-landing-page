@@ -93,7 +93,7 @@ export const Navbar = () => {
         <div className="container">
           <div className="relative -mx-4 flex items-center justify-between">
             <div className="w-60 max-w-full px-4">
-              <a href="index.html" className="navbar-logo block w-full py-5">
+              <a href="/" className="navbar-logo block w-full py-5">
                 <img style={{width: '50px'}} src={logoSrc} alt="logo" className="header-logo w-full" />
               </a>
             </div>
@@ -195,7 +195,6 @@ export const Navbar = () => {
                   </a>
                   <a
                     href="/signup"
-                    target="_blank"
                     className="signUpBtn rounded-md bg-white bg-opacity-20 px-6 py-2 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
                     onClick={closeNavbar}
                   >

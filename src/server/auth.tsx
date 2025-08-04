@@ -31,6 +31,16 @@ class Auth {
 		});
 		return response.json();
   	};
+
+  	static checkResetToken = async (data) => {
+		const url = `${API_PATH}auth/checkResetToken`;
+		const response = await fetch(url, {
+		  method: "POST",
+		  headers: { "Content-Type": "application/json" },
+		  body: JSON.stringify(data),
+		});
+		return response.json();
+  	};
 }
 
 export { Auth };

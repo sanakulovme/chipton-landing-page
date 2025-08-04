@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, ArrowRight } from "lucide-react";
-import { useLocation } from 'react-router-dom';
 import Loader from "../icons/Loader";
 import Banner from '../components/Banner';
+import "../index.css";
 
 // API [server]
 import { Auth } from "../server/auth";
@@ -11,20 +12,12 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: "",
     password: "",
     confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState({});
-  const location = useLocation();
-  const currentPathname = location.pathname;
-
-  useEffect(() => {
-    if (currentPathname === '/signup') {
-      import('../index.css');
-    }
-  }, [currentPathname]);
+  const { token } = useParams();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -84,29 +77,6 @@ const Register = () => {
                 <span className="font-medium">Xatolik!</span> {modal.error}
               </div>
             ) : null}
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Email
-              </label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="outline-none w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
-                  placeholder="john@example.com"
-                  required
-                />
-              </div>
-            </div>
-
             <div>
               <label
                 htmlFor="password"
