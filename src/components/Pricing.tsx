@@ -1,3 +1,5 @@
+import { X } from 'lucide-react';
+import Close from '../icons/Close';
 
 export const Pricing = () => {
   return (
@@ -42,16 +44,19 @@ export const Pricing = () => {
                   </h5>
                   <div className="flex flex-col gap-[14px]">
                     <p className="text-base text-body-color dark:text-dark-6">
-                      1 ta foydalanuvchigacha
+                      100 ta talabalar qamrovi
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Barcha interfeys komponentlari
+                      100 ta sertifikat tayyorlash
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Umrbod foydalanish
+                      10 ta kurs yaratish
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Bepul yangilanishlar
+                      Moliyaviy statistika
+                    </p>
+                    <p className="text-base text-body-color dark:text-dark-6">
+                      Raqamli davomat
                     </p>
                   </div>
                 </div>
@@ -86,16 +91,22 @@ export const Pricing = () => {
                   </h5>
                   <div className="flex flex-col gap-[14px]">
                     <p className="text-base text-body-color dark:text-dark-6">
-                      1 ta foydalanuvchigacha
+                      300 ta talabalar qamrovi
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Barcha interfeys komponentlari
+                      500 ta sertifikat tayyorlash
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Umrbod foydalanish
+                      50 ta kurs yaratish
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Bepul yangilanishlar
+                      700 ta SMS xabar
+                    </p>
+                    <p className="text-base text-body-color dark:text-dark-6">
+                      Moliyaviy statistika
+                    </p>
+                    <p className="text-base text-body-color dark:text-dark-6">
+                      Raqamli davomat
                     </p>
                   </div>
                 </div>
@@ -127,16 +138,22 @@ export const Pricing = () => {
                   </h5>
                   <div className="flex flex-col gap-[14px]">
                     <p className="text-base text-body-color dark:text-dark-6">
-                      1 ta foydalanuvchigacha
+                      600 ta talabalar qamrovi
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Barcha interfeys komponentlari
+                      1000 ta sertifikat tayyorlash
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Umrbod foydalanish
+                      100 ta kurs yaratish
                     </p>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      Bepul yangilanishlar
+                      1500 ta SMS xabar
+                    </p>
+                    <p className="text-base text-body-color dark:text-dark-6">
+                      Moliyaviy statistika
+                    </p>
+                    <p className="text-base text-body-color dark:text-dark-6">
+                      Raqamli davomat
                     </p>
                   </div>
                 </div>

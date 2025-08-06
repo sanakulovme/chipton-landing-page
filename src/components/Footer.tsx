@@ -11,12 +11,14 @@ export const Footer = () => {
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-4/12 xl:w-3/12">
               <div className="w-full mb-10">
-                <a href="#" className="mb-6 inline-block max-w-[160px]">
+                <a href="#" className="mb-6 flex justify-center items-center gap-3 max-w-[160px]">
                   <img
-                    src="/images/logo/logo-white.svg"
+                    src="/images/logo/favicon.png"
+                    width='35px'
                     alt="logo"
                     className="max-w-full"
                   />
+                  <span className='text-xl text-white'>chipton.uz</span>
                 </a>
                 <p className="mb-8 max-w-[270px] text-base text-gray-7">
                   O‘quv markazlari uchun avtomatlashtirilgan CRM tizimi.
@@ -39,7 +41,7 @@ export const Footer = () => {
             </div>
             <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
               <div className="w-full mb-10">
-                <h4 className="text-lg font-semibold text-white mb-9">Biz haqimizda</h4>
+                <h4 className="text-lg font-semibold text-white mb-9">Sahifalar</h4>
                 <ul>
                   <li>
                     <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
@@ -47,18 +49,18 @@ export const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Xususiyatlar
+                    <a href="#features" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Qulayliklar
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Loyihamiz
+                    <a href="#faq" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Savollar
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Fikrlar
+                    <a href="#pricing" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
+                      Narxlar
                     </a>
                   </li>
                 </ul>
@@ -70,28 +72,28 @@ export const Footer = () => {
                 <ul>
                   <li>
                     <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Qanday ishlaydi
+                      Raqamli davomat
                     </a>
                   </li>
                   <li>
                     <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Maxfiylik siyosati
+                      Tartibli boshqaruv
                     </a>
                   </li>
                   <li>
                     <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Foydalanish shartlari
+                      Online sertifikatlash
                     </a>
                   </li>
                   <li>
                     <a href="#" className="inline-block mb-3 text-base text-gray-7 hover:text-primary">
-                      Qaytarish siyosati
+                      Moliyaviy aniqlik
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+            {/*<div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
               <div className="w-full mb-10">
                 <h4 className="text-lg font-semibold text-white mb-9">Mahsulotlarimiz</h4>
                 <ul>
@@ -117,7 +119,7 @@ export const Footer = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div>*/}
             <div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
               <div className="w-full mb-10">
                 <h4 className="text-lg font-semibold text-white mb-9">So‘nggi maqolalar</h4>

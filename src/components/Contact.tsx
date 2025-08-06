@@ -27,7 +27,7 @@ export const Contact = () => {
                         Bizning manzil
                       </h5>
                       <p className="text-base text-body-color dark:text-dark-6">
-                        401 Broadway, 24-qavat, Orchard Cloud View, London
+                        O'zbekiston, Samarqand tumani, Husayn Boyqoro ko'chasi 95-uy (Seliskiy)
                       </p>
                     </div>
                   </div>
@@ -40,10 +40,10 @@ export const Contact = () => {
                         Qanday yordam bera olamiz?
                       </h5>
                       <p className="text-base text-body-color dark:text-dark-6">
-                        info@yourdomain.com
+                        +998 77 080 15 63
                       </p>
                       <p className="mt-1 text-base text-body-color dark:text-dark-6">
-                        contact@yourdomain.com
+                        @sanakulovme
                       </p>
                     </div>
                   </div>
