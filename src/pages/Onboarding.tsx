@@ -37,7 +37,6 @@ const Onboarding = () => {
     const fetchToken = async () => {
       try {
         const response = await Auth.eduVerify({ token: token });
-        console.log(response);
         if (!response.ok) {
           setNotFound(true);
         } else if (pathname.startsWith("/onboarding/")) {
