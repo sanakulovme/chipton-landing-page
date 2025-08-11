@@ -20,13 +20,13 @@ export const About = () => {
                     Zamonaviy ta'lim CRM tizimini yaratish uchun qulay platforma
                   </h2>
                   <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
-                    Bizning asosiy maqsadimiz — o‘qituvchilar va ta’lim markazlari uchun
-                    o‘quv jarayonini raqamli boshqarishni sodda va samarali qilishdir.
-                    CRM tizimimiz yordamida siz guruhlar, darslar, o‘quvchilar va to‘lovlarni
+                    Bizning asosiy maqsadimiz — o'qituvchilar va ta’lim markazlari uchun
+                    o'quv jarayonini raqamli boshqarishni sodda va samarali qilishdir.
+                    CRM tizimimiz yordamida siz guruhlar, darslar, o'quvchilar va to'lovlarni
                     oson boshqarishingiz mumkin.
                     <br />
                     <br />
-                    Talabalaringizni raqamli sertifikat bilan ta'minlash va online saqlash, sertifikatlash tizimini to'liq avtomatlashtirish vaqtingizni 4X tejaydi. Sertifikatlarni tekshirish uchun quydagi platformadan foydalaning.
+                    Talabalaringizni raqamli sertifikat bilan ta'minlash va online saqlash, sertifikatlash tizimini to'liq avtomatlashtirish vaqtingizni 4X tejaydi. Sertifikatlarni tekshirish uchun quyidagi platformadan foydalaning.
                   </p>
                   <a
                     href="https://my.chipton.uz"

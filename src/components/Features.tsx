@@ -15,7 +15,7 @@ export const Features = () => {
                   Qulayliklar
                 </span> */}
                 <h2 className="mb-3 text-3xl font-bold text-dark dark:text-white sm:text-4xl md:text-[40px] md:leading-[1.2]">
-                  Assosiy afzalliklar
+                Asosiy afzalliklar
                 </h2>
                 <p className="text-base text-body-color dark:text-dark-6">
                 Ko‘plab CRM tizimlari mavjud, ammo bizning yechimimiz aynan o‘quv markazlari ehtiyojlari asosida ishlab chiqilgan — sodda, samarali va ishonchli.
@@ -34,7 +34,7 @@ export const Features = () => {
                   Vaqtni tejang
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Sertifikat yaratish vaqtini 90% ga qisqartiring. Malumotlar bilan ishlash juda tez
+                  Sertifikat yaratish vaqtini 90% ga qisqartiring. Ma'lumotlar bilan ishlash juda tez
                 </p>
                 {/*<a
                   href="#"
@@ -54,7 +54,7 @@ export const Features = () => {
                   Raqamli davomat
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Talabalaringizning kunlik davomatini boshqarish, tahlil qilish va aniq haftalik, oylik statistika
+                Talabalaringizning kunlik davomatini boshqarish, tahlil qilish va aniq haftalik, oylik statistika.
                 </p>
                 {/*<a
                   href="#"
@@ -74,7 +74,7 @@ export const Features = () => {
                   Moliyaviy aniqlik
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                  Har oyda moliyaviy hisobotlarni tahlil qilish va boshqarish. Foydaning kurslar miqiyosida taqsimlash
+                Har oyda moliyaviy hisobotlarni tahlil qilish va boshqarish. Foydaning kurslar miqyosida taqsimlash.
                 </p>
                 {/*<a
                   href="#"

@@ -54,8 +54,7 @@ const Banner = () => {
             </span>
           </h2>
           <p className="text-blue-100 text-lg leading-relaxed">
-            Join thousands of professionals who trust our platform to streamline their workflow
-            and boost productivity.
+          Ish jarayonini soddalashtirish va samaradorlikni oshirish uchun platformamizga ishonadigan minglab mutaxassislarga qo'shiling.
           </p>
         </div>
 

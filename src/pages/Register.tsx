@@ -88,7 +88,7 @@ const Register = () => {
             <div className="w-full max-w-md mx-auto">
               <div className="mb-8">
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                  Akkaunt yarating
+                  Hisob yarating
                 </h1>
                 <p className="text-gray-600">
                   Barcha qulayliklardan bugunoq foydalanishni boshlang!
@@ -221,7 +221,7 @@ const Register = () => {
 
               <div className="mt-6 text-center">
                 <p className="text-gray-600">
-                  Akkauntingiz bormi?{" "}
+                  Hisobingiz bormi?{" "}
                   <a
                     href="https://app.chipton.uz/login"
                     className="text-blue-600 hover:text-blue-500 font-medium"
