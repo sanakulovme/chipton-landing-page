@@ -30,11 +30,11 @@ export const Hero = () => {
                 </li>
                 <li>
                   <a
-                    href="https://demo.chipton.uz/login"
+                    href="https://chipton.uz/signup"
                     target="_blank"
                     className="flex items-center gap-4 rounded-md bg-white/[0.12] px-6 py-[14px] text-base font-medium text-white transition duration-300 ease-in-out hover:bg-white hover:text-dark"
                   >
-                    Demo
+                    Boshlash
                     <ChevronsRight />
                   </a>
                 </li>
