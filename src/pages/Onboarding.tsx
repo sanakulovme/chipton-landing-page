@@ -1,6 +1,6 @@
-import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import NotFound from './NotFound';
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+import NotFound from "./NotFound";
 
 // API [server]
 import { Auth } from "../server/auth";
@@ -10,27 +10,40 @@ import "../assets/css/loader.css";
 const Onboarding = () => {
   const [loading, setLoading] = useState(true);
   const [formData, setFormData] = useState({
-    centerName: '',
-    centerPhone: '',
-    authorName: '',
-    authorPhone: '',
-    region: '',
-    centerType: ''
+    centerName: "",
+    centerPhone: "",
+    authorName: "",
+    authorPhone: "",
+    region: "",
+    centerType: "",
+    token: "",
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<{
+    centerName?: string;
+    centerPhone?: string;
+    authorName?: string;
+    authorPhone?: string;
+    region?: string;
+    centerType?: string;
+  }>({});
   const [notFound, setNotFound] = useState(false);
   const { token } = useParams();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     setLoading(true);
 
     const fetchToken = async () => {
       try {
-        const response = await Auth.eduVerify({'token': token});
-        console.log(response)
-        if (!response.ok) setNotFound(true);
-        setFormData({...formData, token: token})
+        const response = await Auth.eduVerify({ token: token });
+        console.log(response);
+        if (!response.ok) {
+          setNotFound(true);
+        } else if (pathname.startsWith("/onboarding/")) {
+          import("../index.css");
+        }
+        setFormData({ ...formData, token: token });
       } catch (err) {
         console.log(err);
       } finally {
@@ -42,20 +55,29 @@ const Onboarding = () => {
   }, [token, navigate]);
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: {
+      centerName?: string;
+      centerPhone?: string;
+      authorName?: string;
+      authorPhone?: string;
+      region?: string;
+      centerType?: string;
+    } = {};
     const phoneRegex = /^\+998\d{9}$/;
 
     if (!formData.centerName.trim()) {
       newErrors.centerName = "Markaz nomi kiritilishi shart";
     }
     if (!formData.centerPhone || !phoneRegex.test(formData.centerPhone)) {
-      newErrors.centerPhone = "Telefon raqami +998 bilan boshlanib, 12 ta raqamdan iborat bo‘lishi kerak";
+      newErrors.centerPhone =
+        "Telefon raqami +998 bilan boshlanib, 12 ta raqamdan iborat bo‘lishi kerak";
     }
     if (!formData.authorName.trim()) {
       newErrors.authorName = "Asoschi ismi kiritilishi shart";
     }
     if (!formData.authorPhone || !phoneRegex.test(formData.authorPhone)) {
-      newErrors.authorPhone = "Telefon raqami +998 bilan boshlanib, 12 ta raqamdan iborat bo‘lishi kerak";
+      newErrors.authorPhone =
+        "Telefon raqami +998 bilan boshlanib, 12 ta raqamdan iborat bo‘lishi kerak";
     }
     if (!formData.region) {
       newErrors.region = "Viloyatni tanlash shart";
@@ -79,7 +101,7 @@ const Onboarding = () => {
         console.log(response);
         if (response.ok) {
           setLoading(true);
-          window.location.href = 'https://app.chipton.uz/login';
+          window.location.href = "https://app.chipton.uz/login";
         } else {
           alert(response.error);
         }
@@ -93,21 +115,21 @@ const Onboarding = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
     // Har bir o'zgarishda xatoni yangilash
-    setErrors(prev => ({ ...prev, [name]: '' }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   return (
     <>
       {loading ? (
-        <div className='loader-container'><div className="loader"></div></div>
+        <div className="loader-container">
+          <div className="loader"></div>
+        </div>
+      ) : notFound ? (
+        <NotFound />
       ) : (
-        (
-          notFound ? 
-          <NotFound />
-          :
-          <div className="flex items-center justify-center p-12">
+        <div className="flex items-center justify-center p-12">
           <div className="mx-auto w-full max-w-[550px] bg-white">
             <form onSubmit={handleSubmit}>
               <div className="-mx-3 flex flex-wrap">
@@ -125,10 +147,16 @@ const Onboarding = () => {
                       id="centerName"
                       value={formData.centerName}
                       onChange={handleChange}
-                      className={`w-full rounded-md border ${errors.centerName ? 'border-red-500' : 'border-[#e0e0e0]'} bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
+                      className={`w-full rounded-md border ${
+                        errors.centerName
+                          ? "border-red-500"
+                          : "border-[#e0e0e0]"
+                      } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
                     {errors.centerName && (
-                      <p className="mt-1 text-sm text-red-600">{errors.centerName}</p>
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.centerName}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -147,10 +175,16 @@ const Onboarding = () => {
                       value={formData.centerPhone}
                       onChange={handleChange}
                       placeholder="+998901234567"
-                      className={`w-full rounded-md border ${errors.centerPhone ? 'border-red-500' : 'border-[#e0e0e0]'} bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
+                      className={`w-full rounded-md border ${
+                        errors.centerPhone
+                          ? "border-red-500"
+                          : "border-[#e0e0e0]"
+                      } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
                     {errors.centerPhone && (
-                      <p className="mt-1 text-sm text-red-600">{errors.centerPhone}</p>
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.centerPhone}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -171,10 +205,16 @@ const Onboarding = () => {
                       id="authorName"
                       value={formData.authorName}
                       onChange={handleChange}
-                      className={`w-full rounded-md border ${errors.authorName ? 'border-red-500' : 'border-[#e0e0e0]'} bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
+                      className={`w-full rounded-md border ${
+                        errors.authorName
+                          ? "border-red-500"
+                          : "border-[#e0e0e0]"
+                      } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
                     {errors.authorName && (
-                      <p className="mt-1 text-sm text-red-600">{errors.authorName}</p>
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.authorName}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -193,10 +233,16 @@ const Onboarding = () => {
                       value={formData.authorPhone}
                       onChange={handleChange}
                       placeholder="+998901234567"
-                      className={`w-full rounded-md border ${errors.authorPhone ? 'border-red-500' : 'border-[#e0e0e0]'} bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
+                      className={`w-full rounded-md border ${
+                        errors.authorPhone
+                          ? "border-red-500"
+                          : "border-[#e0e0e0]"
+                      } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
                     {errors.authorPhone && (
-                      <p className="mt-1 text-sm text-red-600">{errors.authorPhone}</p>
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.authorPhone}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -216,9 +262,13 @@ const Onboarding = () => {
                       name="region"
                       value={formData.region}
                       onChange={handleChange}
-                      className={`block w-full px-4 py-2 text-gray-700 bg-white border ${errors.region ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+                      className={`block w-full px-4 py-2 text-gray-700 bg-white border ${
+                        errors.region ? "border-red-500" : "border-gray-300"
+                      } rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
                     >
-                      <option value="" disabled>--Viloyat--</option>
+                      <option value="" disabled>
+                        --Viloyat--
+                      </option>
                       <option value="andijon">Andijon</option>
                       <option value="buxoro">Buxoro</option>
                       <option value="fargona">Farg‘ona</option>
@@ -231,10 +281,14 @@ const Onboarding = () => {
                       <option value="sirdaryo">Sirdaryo</option>
                       <option value="surxondaryo">Surxondaryo</option>
                       <option value="toshkent">Toshkent</option>
-                      <option value="qoraqalpogiston">Qoraqalpog‘iston Respublikasi</option>
+                      <option value="qoraqalpogiston">
+                        Qoraqalpog‘iston Respublikasi
+                      </option>
                     </select>
                     {errors.region && (
-                      <p className="mt-1 text-sm text-red-600">{errors.region}</p>
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.region}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -251,14 +305,22 @@ const Onboarding = () => {
                       id="centerType"
                       value={formData.centerType}
                       onChange={handleChange}
-                      className={`block w-full px-4 py-2 text-gray-700 bg-white border ${errors.centerType ? 'border-red-500' : 'border-gray-300'} rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
+                      className={`block w-full px-4 py-2 text-gray-700 bg-white border ${
+                        errors.centerType ? "border-red-500" : "border-gray-300"
+                      } rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
                     >
-                      <option value="" disabled>--Markaz turi--</option>
+                      <option value="" disabled>
+                        --Markaz turi--
+                      </option>
                       <option value="Xususiy">Xususiy</option>
-                      <option value="Davlat tashkiloti">Davlat tashkiloti</option>
+                      <option value="Davlat tashkiloti">
+                        Davlat tashkiloti
+                      </option>
                     </select>
                     {errors.centerType && (
-                      <p className="mt-1 text-sm text-red-600">{errors.centerType}</p>
+                      <p className="mt-1 text-sm text-red-600">
+                        {errors.centerType}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -275,7 +337,6 @@ const Onboarding = () => {
             </form>
           </div>
         </div>
-        )
       )}
     </>
   );
