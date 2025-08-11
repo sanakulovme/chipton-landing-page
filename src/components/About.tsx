@@ -26,15 +26,13 @@ export const About = () => {
                     oson boshqarishingiz mumkin.
                     <br />
                     <br />
-                    Interaktiv panel va statistik tahlillar orqali siz
-                    ta’lim jarayonini real vaqtda kuzatishingiz, natijalarni tahlil qilishingiz va
-                    o‘z markazingizni rivojlantirishingiz mumkin.
+                    Talabalaringizni raqamli sertifikat bilan ta'minlash va online saqlash, sertifikatlash tizimini to'liq avtomatlashtirish vaqtingizni 4X tejaydi. Sertifikatlarni tekshirish uchun quydagi platformadan foydalaning.
                   </p>
                   <a
-                    href="#"
+                    href="https://my.chipton.uz"
                     className="inline-flex items-center justify-center rounded-md border border-primary bg-primary px-7 py-3 text-center text-base font-medium text-white hover:border-blue-dark hover:bg-blue-dark"
                   >
-                    Batafsil maʼlumot
+                    Sertifikat tekshirish
                   </a>
                 </div>
               </div>
@@ -60,13 +58,13 @@ export const About = () => {
                     <div className="relative z-10 mb-4 flex items-center justify-center overflow-hidden bg-primary px-6 py-12 sm:mb-8 sm:h-[160px] sm:p-5 lg:mb-4 xl:mb-8">
                       <div>
                         <span className="block text-5xl font-extrabold text-white">
-                          09
+                          10X
                         </span>
                         <span className="block text-base font-semibold text-white">
-                          Yillik tajriba
+                          Tezroq jarayon
                         </span>
                         <span className="block text-base font-medium text-white text-opacity-70">
-                          Ta’lim texnologiyalarida
+                          Sertifikatlarni chop etishda
                         </span>
                       </div>
                       <div>
