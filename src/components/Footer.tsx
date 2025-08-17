@@ -1,6 +1,6 @@
 import Telegram from "../icons/Telegram";
 import Shape1 from "../icons/Shape1";
-import { Instagram, Facebook, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -24,17 +24,11 @@ export const Footer = () => {
                   O‘quv markazlari uchun avtomatlashtirilgan CRM tizimi.
                 </p>
                 <div className="flex items-center -mx-3">
-                  <a href="#" className="px-3 text-gray-7 hover:text-white">
+                  <a href="https://t.me/chiptonuz" className="px-3 text-gray-7 hover:text-white">
                     <Telegram />
                   </a>
-                  <a href="#" className="px-3 text-gray-7 hover:text-white">
+                  <a href="https://instagram.com/chipton.uz" className="px-3 text-gray-7 hover:text-white">
                     <Instagram />
-                  </a>
-                  <a href="#" className="px-3 text-gray-7 hover:text-white">
-                    <Facebook />
-                  </a>
-                  <a href="#" className="px-3 text-gray-7 hover:text-white">
-                    <Youtube />
                   </a>
                 </div>
               </div>
