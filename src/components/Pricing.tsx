@@ -1,5 +1,5 @@
-import { X } from 'lucide-react';
-import Close from '../icons/Close';
+import { CheckCircle, SlClose  } from 'lucide-react';
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 export const Pricing = () => {
   return (
@@ -43,20 +43,29 @@ export const Pricing = () => {
                     Imkoniyatlar
                   </h5>
                   <div className="flex flex-col gap-[14px]">
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      100 ta talabalar qamrovi
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 100 ta talabalar qamrovi
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      100 ta sertifikat tayyorlash
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 10 ta kurs yaratish
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      10 ta kurs yaratish
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> Moliyaviy statistika
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      Moliyaviy statistika
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> Telegram bot
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      Raqamli davomat
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <IoCloseCircleOutline size='25px' color="#f00" /> SMS xabarlar
+                    </p>
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <IoCloseCircleOutline size='25px' color="#f00" /> Sertifikat tayyorlash
+                    </p>
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <IoCloseCircleOutline size='25px' color="#f00" /> Induvidan qo'llab quvvatlash
+                    </p>
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <IoCloseCircleOutline size='25px' color="#f00" /> Sinov muddati
                     </p>
                   </div>
                 </div>
@@ -76,7 +85,7 @@ export const Pricing = () => {
                   Tavsiya etiladi
                 </p>
                 <span className="mb-5 block text-xl font-medium text-dark dark:text-white">
-                  Asosiy
+                  Pro
                 </span>
                 <h2 className="mb-11 text-4xl font-semibold text-dark dark:text-white xl:text-[42px] xl:leading-[1.21]">
                   <span className="-ml-1 -tracking-[2px]">299.000</span>
@@ -90,23 +99,29 @@ export const Pricing = () => {
                     Imkoniyatlar
                   </h5>
                   <div className="flex flex-col gap-[14px]">
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      300 ta talabalar qamrovi
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 500 ta talabalar qamrovi
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      500 ta sertifikat tayyorlash
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 500 ta sertifikat tayyorlash
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      50 ta kurs yaratish
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 50 ta kurs yaratish
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      700 ta SMS xabar
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 700 ta SMS xabar/oy
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      Moliyaviy statistika
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> Moliyaviy statistika
                     </p>
-                    <p className="text-base text-body-color dark:text-dark-6">
-                      Raqamli davomat
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> Telegram bot
+                    </p>
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> Induvidan qo'llab quvvatlash 24/7
+                    </p>
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 15-kunlik sinov muddati
                     </p>
                   </div>
                 </div>
@@ -120,7 +135,7 @@ export const Pricing = () => {
             </div>
 
             {/* Premium */}
-            <div className="w-full px-4 md:w-1/2 lg:w-1/3">
+            {/*<div className="w-full px-4 md:w-1/2 lg:w-1/3">
               <div className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing dark:bg-dark-2 sm:p-12 lg:px-6 lg:py-10 xl:p-14">
                 <span className="mb-5 block text-xl font-medium text-dark dark:text-white">
                   Premium
@@ -164,7 +179,7 @@ export const Pricing = () => {
                   Xarid qilish
                 </a>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

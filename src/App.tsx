@@ -3,6 +3,8 @@ import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import Onboarding from './pages/Onboarding';
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 
 import { SignupLoader } from "./components/SignupLoader";
 function App() {
@@ -14,6 +16,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Register />} />
           <Route path="/sign-up" element={<Register />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/onboarding/:token" element={<Onboarding />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

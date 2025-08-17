@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Loader from "../icons/Loader";
 import Banner from "../components/Banner";
 import { Auth } from "../server/auth";
@@ -220,15 +220,24 @@ const Register = () => {
               </form>
 
               <div className="mt-6 text-center">
-                <p className="text-gray-600">
-                  Hisobingiz bormi?{" "}
-                  <a
-                    href="https://app.chipton.uz/login"
-                    className="text-blue-600 hover:text-blue-500 font-medium"
-                  >
-                    Kirish
-                  </a>
-                </p>
+              <p className="mt-4 text-center text-sm text-gray-600">
+                Tugmani bosish orqali siz{" "}
+                <Link
+                  to="/terms-of-service"
+                  className="font-medium text-blue-600 hover:underline"
+                >
+                  Foydalanish shartlari
+                </Link>{" "}
+                va{" "}
+                <Link
+                  to="/privacy-policy"
+                  className="font-medium text-blue-600 hover:underline"
+                >
+                  Maxfiylik siyosati
+                </Link>
+                ga rozilik bildirasiz.
+              </p>
+
               </div>
             </div>
           </div>

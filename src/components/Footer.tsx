@@ -151,13 +151,10 @@ export const Footer = () => {
               <div className="w-full px-4 md:w-2/3 lg:w-1/2">
                 <div className="my-1">
                   <div className="flex items-center justify-center -mx-3 md:justify-start">
-                    <a href="#" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                    <a href="/privacy-policy" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
                       Maxfiylik siyosati
                     </a>
-                    <a href="#" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
-                      Yuridik ma’lumot
-                    </a>
-                    <a href="#" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
+                    <a href="/terms-of-service" className="px-3 text-base text-gray-7 hover:text-white hover:underline">
                       Foydalanish shartlari
                     </a>
                   </div>
