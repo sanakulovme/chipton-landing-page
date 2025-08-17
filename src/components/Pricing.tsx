@@ -50,6 +50,9 @@ export const Pricing = () => {
                       <CheckCircle size="22px" className="text-primary" /> 10 ta kurs yaratish
                     </p>
                     <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
+                      <CheckCircle size="22px" className="text-primary" /> 50 ta sertifikat tayyorlash
+                    </p>
+                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
                       <CheckCircle size="22px" className="text-primary" /> Moliyaviy statistika
                     </p>
                     <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
@@ -57,9 +60,6 @@ export const Pricing = () => {
                     </p>
                     <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
                       <IoCloseCircleOutline size='25px' color="#f00" /> SMS xabarlar
-                    </p>
-                    <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
-                      <IoCloseCircleOutline size='25px' color="#f00" /> Sertifikat tayyorlash
                     </p>
                     <p className="flex gap-[10px] text-base text-body-color dark:text-dark-6">
                       <IoCloseCircleOutline size='25px' color="#f00" /> Induvidan qo'llab quvvatlash
