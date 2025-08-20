@@ -114,7 +114,7 @@ export const Footer = () => {
                 </ul>
               </div>
             </div>*/}
-            <div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
+            {/*<div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
               <div className="w-full mb-10">
                 <h4 className="text-lg font-semibold text-white mb-9">So‘nggi maqolalar</h4>
                 <div className="flex flex-col gap-8">
@@ -136,7 +136,7 @@ export const Footer = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
         <div className="mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]">
