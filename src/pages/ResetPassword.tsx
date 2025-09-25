@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
 import { Eye, EyeOff, Mail, Lock, User, ArrowRight } from "lucide-react";
 import Loader from "../icons/Loader";
@@ -8,15 +8,23 @@ import "../index.css";
 // API [server]
 import { Auth } from "../server/auth";
 
-const Register = () => {
+interface Modal {
+  success?: string;
+  error?: string;
+}
+
+interface FormData {
+  password?: string;
+  password_confirmation?: string;
+  token?: string;
+}
+
+const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    password: "",
-    confirmPassword: "",
-  });
+  const [formData, setFormData] = useState<FormData>({});
   const [loading, setLoading] = useState(false);
-  const [modal, setModal] = useState({});
+  const [modal, setModal] = useState<Modal>({});
   const { token } = useParams();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,15 +34,38 @@ const Register = () => {
     });
   };
 
+  useEffect(() => {
+    setFormData({...formData, token });
+    const verifyToken = async () => {
+      if (!token) return;
+      setLoading(true);
+      try {
+        const response = await Auth.checkResetToken({ token });
+        console.log(response);
+        if (response.ok) {
+          setModal({ success: response.message });
+        } else {
+          window.location.href = "/";
+        }
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    verifyToken();
+  }, [token]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setModal({});
     try {
-      const response = await Auth.signUp(formData);
+      const response = await Auth.resetPassword(formData);
       console.log(response);
       if (response.ok) {
-        setModal({ success: response.message });
+        window.location.href = "https://app.chipton.uz/login";
         setFormData({});
       } else {
         setModal({ error: response.error });
@@ -53,10 +84,10 @@ const Register = () => {
         <div className="w-full max-w-md mx-auto">
           <div className="mb-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
-              Akkaunt yarating
+              Parolingizni tiklang
             </h1>
             <p className="text-gray-600">
-              Barcha qulayliklardan bugunoq foydalanishni boshlang!
+              Hisobingiz uchun yangi parol yarating.
             </p>
           </div>
 
@@ -121,9 +152,9 @@ const Register = () => {
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type={showConfirmPassword ? "text" : "password"}
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={formData.confirmPassword}
+                  id="password_confirmation"
+                  name="password_confirmation"
+                  value={formData.password_confirmation}
                   onChange={handleChange}
                   className="outline-none w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
                   placeholder="••••••••"
@@ -143,43 +174,13 @@ const Register = () => {
               </div>
             </div>
 
-            {/*<div className="flex items-center">
-              <input
-                id="terms"
-                name="terms"
-                type="checkbox"
-                className="outline-none h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
-                required
-              />
-              <label
-                htmlFor="terms"
-                className="ml-2 block text-sm text-gray-700"
-              >
-                Men{" "}
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-500 font-medium"
-                >
-                  foydalanish shartlari
-                </a>{" "}
-                va{" "}
-                <a
-                  href="#"
-                  className="text-blue-600 hover:text-blue-500 font-medium"
-                >
-                  Maxfiylik siyosatiga
-                </a>{" "}
-                roziman
-              </label>
-            </div>*/}
-
             <button
               type="submit"
               className={`${
                 loading ? "opacity-50" : ""
               } w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-4 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center group`}
             >
-              Yaratish
+              Tiklash
               {loading ? (
                 <div className="ml-2">
                   <Loader />
@@ -189,27 +190,15 @@ const Register = () => {
               )}
             </button>
           </form>
-
-          <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              Akkauntingiz bormi?{" "}
-              <a
-                href="https://app.chipton.uz/login"
-                className="text-blue-600 hover:text-blue-500 font-medium"
-              >
-                Kirish
-              </a>
-            </p>
-          </div>
         </div>
       </div>
 
       {/* Right Section - Banner */}
-      <div className="hidden lg:block flex-1">
+      {/* <div className="hidden lg:block flex-1">
         <Banner />
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default Register;
+export default ResetPassword;

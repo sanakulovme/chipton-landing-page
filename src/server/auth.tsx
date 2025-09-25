@@ -22,8 +22,8 @@ class Auth {
 		return response.json();
   	};
 
-  	static eduComplate = async (data: any) => {
-		const url = `${API_PATH}auth/onboarding`;
+  	static resetPassword = async (data: any) => {
+		const url = `${API_PATH}auth/reset-password`;
 		const response = await fetch(url, {
 		  method: "POST",
 		  headers: { "Content-Type": "application/json" },
@@ -33,7 +33,7 @@ class Auth {
   	};
 
   	static checkResetToken = async (data: any) => {
-		const url = `${API_PATH}auth/checkResetToken`;
+		const url = `${API_PATH}auth/check-reset-token`;
 		const response = await fetch(url, {
 		  method: "POST",
 		  headers: { "Content-Type": "application/json" },
