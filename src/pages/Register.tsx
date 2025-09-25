@@ -10,7 +10,7 @@ import { Auth } from "../server/auth";
 interface FormData {
   email: string;
   password: string;
-  confirmPassword: string;
+  password_confirmation: string;
 }
 
 const Register = () => {
@@ -19,7 +19,7 @@ const Register = () => {
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
-    confirmPassword: "",
+    password_confirmation: "",
   });
   const [loading, setLoading] = useState(false);
   const [modal, setModal] = useState<{ success?: string; error?: string }>({});
@@ -53,7 +53,7 @@ const Register = () => {
     setModal({});
 
     // Basic client-side validation
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.password !== formData.password_confirmation) {
       setModal({ error: "Passwords do not match" });
       setLoading(false);
       return;
@@ -63,7 +63,7 @@ const Register = () => {
       const response = await Auth.signUp(formData);
       if (response.ok) {
         setModal({ success: response.message });
-        setFormData({ email: "", password: "", confirmPassword: "" });
+        setFormData({ email: "", password: "", password_confirmation: "" });
       } else {
         setModal({ error: response.error });
       }
@@ -180,8 +180,8 @@ const Register = () => {
                     <input
                       type={showConfirmPassword ? "text" : "password"}
                       id="confirmPassword"
-                      name="confirmPassword"
-                      value={formData.confirmPassword}
+                      name="password_confirmation"
+                      value={formData.password_confirmation}
                       onChange={handleChange}
                       className="outline-none w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 bg-white"
                       placeholder="••••••••"

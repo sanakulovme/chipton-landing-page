@@ -1,4 +1,4 @@
-import { CheckCircle, SlClose  } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 import { IoCloseCircleOutline } from "react-icons/io5";
 
 export const Pricing = () => {

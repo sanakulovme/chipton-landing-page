@@ -1,8 +1,8 @@
-const API_PATH = 'http://127.0.0.1:8000/api/';
-// const API_PATH = 'https://api.chipton.uz/api/v1/';
+// const API_PATH = 'http://127.0.0.1:8000/api/';
+const API_PATH = 'https://chip.smarker.store.uz/api/';
 
 class Auth {
-  	static signUp = async (data) => {
+  	static signUp = async (data: any) => {
 		const url = `${API_PATH}auth/sign-up`;
 		const response = await fetch(url, {
 		  method: "POST",
@@ -12,7 +12,7 @@ class Auth {
 		return response.json();
   	};
 
-  	static tokenVerify = async (data) => {
+  	static tokenVerify = async (data: any) => {
 		const url = `${API_PATH}auth/token-verify`;
 		const response = await fetch(url, {
 		  method: "POST",
@@ -22,7 +22,7 @@ class Auth {
 		return response.json();
   	};
 
-  	static eduComplate = async (data) => {
+  	static eduComplate = async (data: any) => {
 		const url = `${API_PATH}auth/onboarding`;
 		const response = await fetch(url, {
 		  method: "POST",
@@ -32,7 +32,7 @@ class Auth {
 		return response.json();
   	};
 
-  	static checkResetToken = async (data) => {
+  	static checkResetToken = async (data: any) => {
 		const url = `${API_PATH}auth/checkResetToken`;
 		const response = await fetch(url, {
 		  method: "POST",
