@@ -1,5 +1,5 @@
-// const API_PATH = 'http://apiton.uz/api/v1/';
-const API_PATH = 'https://api.chipton.uz/api/v1/';
+const API_PATH = 'http://127.0.0.1:8000/api/';
+// const API_PATH = 'https://api.chipton.uz/api/v1/';
 
 class Auth {
   	static signUp = async (data) => {
@@ -12,8 +12,8 @@ class Auth {
 		return response.json();
   	};
 
-  	static eduVerify = async (data) => {
-		const url = `${API_PATH}auth/eduVerify`;
+  	static tokenVerify = async (data) => {
+		const url = `${API_PATH}auth/token-verify`;
 		const response = await fetch(url, {
 		  method: "POST",
 		  headers: { "Content-Type": "application/json" },
@@ -23,7 +23,7 @@ class Auth {
   	};
 
   	static eduComplate = async (data) => {
-		const url = `${API_PATH}auth/eduComplate`;
+		const url = `${API_PATH}auth/onboarding`;
 		const response = await fetch(url, {
 		  method: "POST",
 		  headers: { "Content-Type": "application/json" },

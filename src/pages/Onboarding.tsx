@@ -9,22 +9,14 @@ import "../assets/css/loader.css";
 
 const Onboarding = () => {
   const [loading, setLoading] = useState(true);
-  const [formData, setFormData] = useState({
-    centerName: "",
-    centerPhone: "",
-    authorName: "",
-    authorPhone: "",
-    region: "",
-    centerType: "",
-    token: "",
-  });
+  const [formData, setFormData] = useState({});
   const [errors, setErrors] = useState<{
-    centerName?: string;
-    centerPhone?: string;
-    authorName?: string;
-    authorPhone?: string;
+    center_name?: string;
+    center_phone?: string;
+    author_name?: string;
+    author_phone?: string;
     region?: string;
-    centerType?: string;
+    center_type?: string;
   }>({});
   const [notFound, setNotFound] = useState(false);
   const { token } = useParams();
@@ -36,7 +28,7 @@ const Onboarding = () => {
 
     const fetchToken = async () => {
       try {
-        const response = await Auth.eduVerify({ token: token });
+        const response = await Auth.tokenVerify({ token: token });
         if (!response.ok) {
           setNotFound(true);
         } else if (pathname.startsWith("/onboarding/")) {
@@ -55,34 +47,34 @@ const Onboarding = () => {
 
   const validateForm = () => {
     const newErrors: {
-      centerName?: string;
-      centerPhone?: string;
-      authorName?: string;
-      authorPhone?: string;
+      center_name?: string;
+      center_phone?: string;
+      author_name?: string;
+      author_phone?: string;
       region?: string;
-      centerType?: string;
+      center_type?: string;
     } = {};
     const phoneRegex = /^\+998\d{9}$/;
 
-    if (!formData.centerName.trim()) {
-      newErrors.centerName = "Markaz nomi kiritilishi shart";
+    if (!formData.center_name.trim()) {
+      newErrors.center_name = "Markaz nomi kiritilishi shart";
     }
-    if (!formData.centerPhone || !phoneRegex.test(formData.centerPhone)) {
-      newErrors.centerPhone =
+    if (!formData.center_phone || !phoneRegex.test(formData.center_phone)) {
+      newErrors.center_phone =
         "Telefon raqami +998 bilan boshlanib, 12 ta raqamdan iborat bo‘lishi kerak";
     }
-    if (!formData.authorName.trim()) {
-      newErrors.authorName = "Asoschi ismi kiritilishi shart";
+    if (!formData.author_name.trim()) {
+      newErrors.author_name = "Asoschi ismi kiritilishi shart";
     }
-    if (!formData.authorPhone || !phoneRegex.test(formData.authorPhone)) {
-      newErrors.authorPhone =
+    if (!formData.author_phone || !phoneRegex.test(formData.author_phone)) {
+      newErrors.author_phone =
         "Telefon raqami +998 bilan boshlanib, 12 ta raqamdan iborat bo‘lishi kerak";
     }
     if (!formData.region) {
       newErrors.region = "Viloyatni tanlash shart";
     }
-    if (!formData.centerType) {
-      newErrors.centerType = "Markaz turini tanlash shart";
+    if (!formData.center_type) {
+      newErrors.center_type = "Markaz turini tanlash shart";
     }
 
     setErrors(newErrors);
@@ -91,9 +83,8 @@ const Onboarding = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
     if (validateForm()) {
-      // Formani yuborish logikasi
-      console.log("Form ma'lumotlari:", formData);
       setLoading(true);
       try {
         const response = await Auth.eduComplate(formData);
@@ -115,7 +106,6 @@ const Onboarding = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    // Har bir o'zgarishda xatoni yangilash
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
@@ -135,26 +125,26 @@ const Onboarding = () => {
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
                     <label
-                      htmlFor="centerName"
+                      htmlFor="center_name"
                       className="mb-3 block text-base font-medium text-[#07074D]"
                     >
                       Markaz nomi
                     </label>
                     <input
                       type="text"
-                      name="centerName"
-                      id="centerName"
-                      value={formData.centerName}
+                      name="center_name"
+                      id="center_name"
+                      value={formData.center_name}
                       onChange={handleChange}
                       className={`w-full rounded-md border ${
-                        errors.centerName
+                        errors.center_name
                           ? "border-red-500"
                           : "border-[#e0e0e0]"
                       } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
-                    {errors.centerName && (
+                    {errors.center_name && (
                       <p className="mt-1 text-sm text-red-600">
-                        {errors.centerName}
+                        {errors.center_name}
                       </p>
                     )}
                   </div>
@@ -162,27 +152,27 @@ const Onboarding = () => {
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
                     <label
-                      htmlFor="centerPhone"
+                      htmlFor="center_phone"
                       className="mb-3 block text-base font-medium text-[#07074D]"
                     >
                       Markaz telefon raqami
                     </label>
                     <input
                       type="text"
-                      name="centerPhone"
-                      id="centerPhone"
-                      value={formData.centerPhone}
+                      name="center_phone"
+                      id="center_phone"
+                      value={formData.center_phone}
                       onChange={handleChange}
                       placeholder="+998901234567"
                       className={`w-full rounded-md border ${
-                        errors.centerPhone
+                        errors.center_phone
                           ? "border-red-500"
                           : "border-[#e0e0e0]"
                       } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
-                    {errors.centerPhone && (
+                    {errors.center_phone && (
                       <p className="mt-1 text-sm text-red-600">
-                        {errors.centerPhone}
+                        {errors.center_phone}
                       </p>
                     )}
                   </div>
@@ -193,26 +183,26 @@ const Onboarding = () => {
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
                     <label
-                      htmlFor="authorName"
+                      htmlFor="author_name"
                       className="mb-3 block text-base font-medium text-[#07074D]"
                     >
                       Markaz asoschisi
                     </label>
                     <input
                       type="text"
-                      name="authorName"
-                      id="authorName"
-                      value={formData.authorName}
+                      name="author_name"
+                      id="author_name"
+                      value={formData.author_name}
                       onChange={handleChange}
                       className={`w-full rounded-md border ${
-                        errors.authorName
+                        errors.author_name
                           ? "border-red-500"
                           : "border-[#e0e0e0]"
                       } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
-                    {errors.authorName && (
+                    {errors.author_name && (
                       <p className="mt-1 text-sm text-red-600">
-                        {errors.authorName}
+                        {errors.author_name}
                       </p>
                     )}
                   </div>
@@ -220,27 +210,27 @@ const Onboarding = () => {
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
                     <label
-                      htmlFor="authorPhone"
+                      htmlFor="author_phone"
                       className="mb-3 block text-base font-medium text-[#07074D]"
                     >
                       Asoschining raqami
                     </label>
                     <input
                       type="text"
-                      name="authorPhone"
-                      id="authorPhone"
-                      value={formData.authorPhone}
+                      name="author_phone"
+                      id="author_phone"
+                      value={formData.author_phone}
                       onChange={handleChange}
                       placeholder="+998901234567"
                       className={`w-full rounded-md border ${
-                        errors.authorPhone
+                        errors.author_phone
                           ? "border-red-500"
                           : "border-[#e0e0e0]"
                       } bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md`}
                     />
-                    {errors.authorPhone && (
+                    {errors.author_phone && (
                       <p className="mt-1 text-sm text-red-600">
-                        {errors.authorPhone}
+                        {errors.author_phone}
                       </p>
                     )}
                   </div>
@@ -294,18 +284,18 @@ const Onboarding = () => {
                 <div className="w-full px-3 sm:w-1/2">
                   <div className="mb-5">
                     <label
-                      htmlFor="centerType"
+                      htmlFor="center_type"
                       className="mb-3 block text-base font-medium text-[#07074D]"
                     >
                       Markaz turi
                     </label>
                     <select
-                      name="centerType"
-                      id="centerType"
-                      value={formData.centerType}
+                      name="center_type"
+                      id="center_type"
+                      value={formData.center_type}
                       onChange={handleChange}
                       className={`block w-full px-4 py-2 text-gray-700 bg-white border ${
-                        errors.centerType ? "border-red-500" : "border-gray-300"
+                        errors.center_type ? "border-red-500" : "border-gray-300"
                       } rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500`}
                     >
                       <option value="" disabled>
@@ -316,9 +306,9 @@ const Onboarding = () => {
                         Davlat tashkiloti
                       </option>
                     </select>
-                    {errors.centerType && (
+                    {errors.center_type && (
                       <p className="mt-1 text-sm text-red-600">
-                        {errors.centerType}
+                        {errors.center_type}
                       </p>
                     )}
                   </div>
