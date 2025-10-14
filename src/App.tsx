@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
+// import Home from './components/v2/Home';
 import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import Onboarding from './pages/Onboarding';
@@ -8,6 +9,7 @@ import TermsOfService from "./pages/TermsOfService";
 
 import { SignupLoader } from "./components/SignupLoader";
 import ResetPassword from './pages/ResetPassword';
+
 function App() {
 
   return (

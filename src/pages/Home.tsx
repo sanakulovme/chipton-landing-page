@@ -18,16 +18,16 @@ const Home: React.FC = () => {
     <>
       <Navbar />
       <Hero />
+      <About />
       <Features />
       {/*<Brands />*/}
-      <About />
       {/*<Cta />*/}
       <Pricing />
       {/*<Testimonials />*/}
       <FAQ />
       {/*<Team />*/}
       <Contact />
-      {/* <BackToTop /> */}
+      <BackToTop />
       <Footer />
     </>
   );

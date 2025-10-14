@@ -1,13 +1,4 @@
-import { useCallback } from 'react';
-
 const Cta = () => {
-  // Handle button click (replace with actual navigation or action)
-  const handleCtaClick = useCallback((e) => {
-    e.preventDefault();
-    // Example: Replace with actual navigation or action
-    console.log('CTA button clicked!');
-    // For navigation, you could use: window.location.href = '/your-path';
-  }, []);
 
   return (
     <>
@@ -29,7 +20,6 @@ const Cta = () => {
                     majority have suffered in some form.
                   </p>
                   <button
-                    onClick={handleCtaClick}
                     className="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-[#0BB489]"
                     aria-label="Start using Play"
                   >

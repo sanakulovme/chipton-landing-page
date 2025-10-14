@@ -165,7 +165,7 @@ export const Navbar = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <label
+               {/* <label
                   htmlFor="themeSwitcher"
                   className="inline-flex cursor-pointer items-center"
                   aria-label="themeSwitcher"
@@ -184,7 +184,7 @@ export const Navbar = () => {
                   <span className="hidden text-white dark:block">
                     <Sun />
                   </span>
-                </label>
+                </label>*/}
                 <div className="hidden sm:flex">
                   <a
                     href="https://app.chipton.uz/login"

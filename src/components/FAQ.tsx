@@ -13,10 +13,10 @@ export const FAQ = () => {
                 <span className="mb-2 block text-lg font-semibold text-primary">
                   Savollar
                 </span>
-                <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-dark dark:text-white sm:text-4xl md:text-[40px]">
+                <h2 className="mb-3 text-3xl font-bold leading-[1.2] text-dark sm:text-4xl md:text-[40px]">
                   Sizni qiziqtirayotgan savollar bormi?
                 </h2>
-                <p className="mx-auto max-w-[485px] text-base text-body-color dark:text-dark-6">
+                <p className="mx-auto max-w-[485px] text-base text-body-color">
                   Quyida ta’lim markazingiz uchun CRM tizimimiz bo‘yicha eng ko‘p beriladigan savollarga javoblarni topishingiz mumkin.
                 </p>
               </div>
@@ -30,10 +30,10 @@ export const FAQ = () => {
                   <FaqIcon />
                 </div>
                 <div className="w-full">
-                  <h3 className="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                  <h3 className="mb-6 text-xl font-semibold text-dark sm:text-2xl lg:text-xl xl:text-2xl">
                     CRM tizimi hujjatlanganmi?
                   </h3>
-                  <p className="text-base text-body-color dark:text-dark-6">
+                  <p className="text-base text-body-color">
                     Ha, bizning CRM tizimimiz to‘liq hujjatlar bilan ta’minlangan. Yordam bo‘limi va video darsliklar orqali barcha funksiyalarni o‘rganishingiz mumkin.
                   </p>
                 </div>
@@ -44,10 +44,10 @@ export const FAQ = () => {
                   <FaqIcon />
                 </div>
                 <div className="w-full">
-                  <h3 className="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                  <h3 className="mb-6 text-xl font-semibold text-dark sm:text-2xl lg:text-xl xl:text-2xl">
                     Dars jadvalini boshqarish imkoni bormi?
                   </h3>
-                  <p className="text-base text-body-color dark:text-dark-6">
+                  <p className="text-base text-body-color">
                     Albatta, siz guruhlar, dars vaqtlari, o‘qituvchilarni CRM orqali qulay tarzda boshqarishingiz mumkin.
                   </p>
                 </div>
@@ -60,10 +60,10 @@ export const FAQ = () => {
                   <FaqIcon />
                 </div>
                 <div className="w-full">
-                  <h3 className="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                  <h3 className="mb-6 text-xl font-semibold text-dark sm:text-2xl lg:text-xl xl:text-2xl">
                     Davomatni qanday yuritaman?
                   </h3>
-                  <p className="text-base text-body-color dark:text-dark-6">
+                  <p className="text-base text-body-color">
                     O‘qituvchilar dars davomida CRM orqali davomatni real vaqt rejimida belgilashlari mumkin. Statistikalar avtomatik tarzda shakllantiriladi.
                   </p>
                 </div>
@@ -74,10 +74,10 @@ export const FAQ = () => {
                   <FaqIcon />
                 </div>
                 <div className="w-full">
-                  <h3 className="mb-6 text-xl font-semibold text-dark dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                  <h3 className="mb-6 text-xl font-semibold text-dark sm:text-2xl lg:text-xl xl:text-2xl">
                     CRM tizimda hisobotlar mavjudmi?
                   </h3>
-                  <p className="text-base text-body-color dark:text-dark-6">
+                  <p className="text-base text-body-color">
                     Ha, tizim orqali o‘quvchilar, davomat, to‘lovlar va o‘qituvchilar faoliyati bo‘yicha to‘liq hisobotlar olish imkoniyati mavjud.
                   </p>
                 </div>
