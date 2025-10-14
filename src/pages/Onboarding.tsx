@@ -87,7 +87,7 @@ const Onboarding = () => {
     if (validateForm()) {
       setLoading(true);
       try {
-        const response = await Auth.eduComplate(formData);
+        const response = await Auth.onboarding(formData);
         console.log(response);
         if (response.ok) {
           setLoading(true);
