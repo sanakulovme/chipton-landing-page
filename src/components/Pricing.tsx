@@ -1,7 +1,43 @@
 import { CheckCircle } from 'lucide-react';
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Auth } from "../server/auth";
+import { useEffect, useState } from 'react';
 
 export const Pricing = () => {
+  const [plans, setPlans] = useState([]);
+
+  useEffect(() => {
+    const fetchPlans = async () => {
+      const response = await Auth.plans();
+      console.log(plans);
+      setPlans(response.data);
+    };
+    fetchPlans();
+  }, []);
+
+
+  const filter = (key: any, value: any) => {
+
+    switch (key) {
+      case 'students':
+        return 'Talabalar qamrovi';
+      case 'courses':
+        return 'Kurs yaratish';
+      case 'certificates':
+        return 'Sertifikatlar';
+      case 'sms':
+        return 'SMS xabarlar';
+      case 'individual_support':
+        return "Induvidan qo'llab quvvatlash";
+      case 'telegram_bot':
+        return "Telegram bot";
+      case 'financial_statistics':
+        return "Moliyaviy statistika";
+      default:
+        return key;
+    }
+  }
+
   return (
     <>
       {/* ====== Pricing Section Start */}
@@ -25,8 +61,54 @@ export const Pricing = () => {
 
           {/* Tarif kartalari */}
           <div className="-mx-4 flex flex-wrap justify-center">
+            {plans.map((plan: any) => (
+              <div key={plan.id} className="w-full px-4 md:w-1/2 lg:w-1/3">
+                <div className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing sm:p-12 lg:px-6 lg:py-10 xl:p-14">
+                  <span className="mb-5 block text-xl font-medium text-dark">
+                    {plan.name || "Boshlang‘ich"}
+                  </span>
+
+                  <h2 className="mb-11 text-4xl font-semibold text-dark xl:text-[42px] xl:leading-[1.21]">
+                    <span className="-ml-1 -tracking-[2px]">{plan.price}</span>
+                    <span className="text-xl font-medium">{plan.currency}</span>
+                    <span className="text-base font-normal text-body-color"> / oyiga</span>
+                  </h2>
+
+                  <div className="mb-[50px]">
+                    <h5 className="mb-5 text-lg font-medium text-dark">Imkoniyatlar</h5>
+
+                    <div className="flex flex-col gap-[10px] text-base text-body-color">
+                      {Object.entries(JSON.parse(plan.features)).map(([key, value]: [string, any]) => (
+                        <p key={key} className="flex gap-[10px] items-center">
+                          {typeof value === "boolean" ? (
+                            value ? (
+                              <CheckCircle size="22px" className="text-primary" />
+                            ) : (
+                              <span><IoCloseCircleOutline size='25px' color="#f00" /></span>
+                            )
+                          ) : (
+                            <span><CheckCircle size="22px" className="text-primary" /></span>
+                          )}
+                          <span>
+                            {filter(key, value)} {typeof value === "boolean" ? "" : value}
+                          </span>
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  <a
+                    href="#"
+                    className="inline-block rounded-md bg-primary px-7 py-3 text-center text-base font-medium text-white transition"
+                  >
+                    Xarid qilish
+                  </a>
+                </div>
+              </div>
+            ))}
+
             {/* Starter */}
-            <div className="w-full px-4 md:w-1/2 lg:w-1/3">
+            {/* <div className="w-full px-4 md:w-1/2 lg:w-1/3">
               <div className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing sm:p-12 lg:px-6 lg:py-10 xl:p-14">
                 <span className="mb-5 block text-xl font-medium text-dark">
                   Boshlang‘ich
@@ -76,10 +158,10 @@ export const Pricing = () => {
                   Xarid qilish
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Basic */}
-            <div className="w-full px-4 md:w-1/2 lg:w-1/3">
+            {/* <div className="w-full px-4 md:w-1/2 lg:w-1/3">
               <div className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing sm:p-12 lg:px-6 lg:py-10 xl:p-14">
                 <p style={{top: '0', right: '0'}} className="absolute inline-block rounded-bl-md rounded-tl-md bg-primary px-5 py-2 text-base font-medium text-white">
                   Tavsiya etiladi
@@ -132,10 +214,10 @@ export const Pricing = () => {
                   Xarid qilish
                 </a>
               </div>
-            </div>
+            </div> */}
 
             {/* Premium */}
-            {/*<div className="w-full px-4 md:w-1/2 lg:w-1/3">
+            {/* <div className="w-full px-4 md:w-1/2 lg:w-1/3">
               <div className="relative z-10 mb-10 overflow-hidden rounded-xl bg-white px-8 py-10 shadow-pricing sm:p-12 lg:px-6 lg:py-10 xl:p-14">
                 <span className="mb-5 block text-xl font-medium text-dark">
                   Premium
@@ -179,7 +261,7 @@ export const Pricing = () => {
                   Xarid qilish
                 </a>
               </div>
-            </div>*/}
+            </div> */}
           </div>
         </div>
       </section>

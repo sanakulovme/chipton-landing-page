@@ -1,5 +1,5 @@
-// const API_PATH = 'http://127.0.0.1:8000/api/';
-const API_PATH = 'https://chip.smarker.store/api/';
+const API_PATH = 'http://127.0.0.1:8000/api/';
+// const API_PATH = 'https://chip.smarker.store/api/';
 
 class Auth {
   	static signUp = async (data: any) => {
@@ -59,6 +59,12 @@ class Auth {
 		  headers: { "Content-Type": "application/json" },
 		  body: JSON.stringify(data),
 		});
+		return response.json();
+  	};
+
+	static plans = async () => {
+		const url = `${API_PATH}plan/fetch`;
+		const response = await fetch(url);
 		return response.json();
   	};
 }
