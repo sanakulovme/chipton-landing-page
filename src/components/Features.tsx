@@ -22,7 +22,7 @@ export const Features = () => {
           </div>
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-              <div style={{flexDirection: 'column'}} className="flex items-center text-center text-center wow fadeInUp group mb-12" data-wow-delay=".1s">
+              <div style={{ flexDirection: 'column' }} className="flex items-center text-center text-center wow fadeInUp group mb-12" data-wow-delay=".1s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
                   <Clock className='text-white' size='37' />
@@ -36,7 +36,7 @@ export const Features = () => {
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-              <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".15s">
+              <div style={{ flexDirection: 'column' }} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".15s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
                   <UserPlus size="35" color="#fff" />
@@ -45,12 +45,12 @@ export const Features = () => {
                   Raqamli davomat
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Talabalaringizning kunlik davomatini boshqarish, tahlil qilish va aniq haftalik, oylik statistika.
+                  Talabalaringizning kunlik davomatini boshqarish, tahlil qilish va aniq haftalik, oylik statistika.
                 </p>
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-              <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".2s">
+              <div style={{ flexDirection: 'column' }} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".2s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
                   <DollarSign size="37" color='#fff' />
@@ -59,12 +59,12 @@ export const Features = () => {
                   Moliyaviy aniqlik
                 </h4>
                 <p className="mb-8 text-body-color dark:text-dark-6 lg:mb-9">
-                Har oyda moliyaviy hisobotlarni tahlil qilish va boshqarish. Foydaning kurslar miqyosida taqsimlash.
+                  Har oyda moliyaviy hisobotlarni tahlil qilish va boshqarish. Foydaning kurslar miqyosida taqsimlash.
                 </p>
               </div>
             </div>
             <div className="w-full px-4 md:w-1/2 lg:w-1/4">
-              <div style={{flexDirection: 'column'}} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".25s">
+              <div style={{ flexDirection: 'column' }} className="flex items-center text-center wow fadeInUp group mb-12" data-wow-delay=".25s">
                 <div className="relative z-10 mb-10 flex h-[70px] w-[70px] items-center justify-center rounded-[14px] bg-primary">
                   <span className="absolute left-0 top-0 -z-[1] mb-8 flex h-[70px] w-[70px] rotate-[25deg] items-center justify-center rounded-[14px] bg-primary bg-opacity-20 duration-300 group-hover:rotate-45" />
                   <Apps />
@@ -76,6 +76,12 @@ export const Features = () => {
                   Darslarni rejalashtirish, o'qituvchilar va talabalar haqidagi ma'lumotlarni oson boshqarish
                 </p>
               </div>
+            </div>
+
+            <div className="flex w-full justify-center">
+              <button className="mt-8 inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-base font-medium text-white shadow-md transition duration-300 ease-in-out hover:bg-opacity-90">
+                Bepul Boshlash
+              </button>
             </div>
           </div>
         </div>

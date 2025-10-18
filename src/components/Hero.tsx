@@ -181,7 +181,7 @@ export const Hero = () => {
             >
               <div className="mt-16">
                 <img
-                  src="/images/hero/hero-image.jpg"
+                  src="/images/hero/banner.jpg"
                   alt="hero"
                   className="mx-auto max-w-full rounded-t-xl rounded-tr-xl"
                 />
