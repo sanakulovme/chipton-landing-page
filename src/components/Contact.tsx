@@ -99,7 +99,7 @@ export const Contact = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
+            {/*<div className="w-full px-4 lg:w-5/12 xl:w-4/12">
               <div
                 className="wow fadeInUp rounded-lg bg-white px-8 py-10 shadow-testimonial sm:px-10 sm:py-12 md:p-[60px] lg:p-10 lg:px-10 lg:py-12 2xl:p-[60px]"
                 data-wow-delay=".2s"
@@ -180,7 +180,7 @@ export const Contact = () => {
                   </div>
                 </form>
               </div>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

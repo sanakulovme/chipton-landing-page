@@ -14,10 +14,10 @@ export const Hero = () => {
               data-wow-delay=".2s"
             >
               <h1 style={{lineHeight: '1.5'}} className="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
-                Raqamli ta'lim CRM tizimi, <br /><span style={{background: '#e67845', color: '#ffffff', borderRadius: '0 10px', padding: '0 5px'}}>chipton.uz</span> ga xush kelibsiz!
+                Raqamli ta'lim CRM tizimi, <br /><span style={{background: '#e67845', color: '#ffffff', borderRadius: '0 10px', padding: '0 5px'}}>chipton CRM</span> ga xush kelibsiz!
               </h1>
               <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
-                Chipton.uz - bu raqamli ta'lim CRM tizimi bo'lib, o'qituvchilar va talabalar uchun qulay interfeys, samarali boshqaruv va yuqori sifatli ta'lim resurslarini taqdim etadi.
+                Chipton CRM - bu raqamli ta'lim CRM tizimi bo'lib, o'qituvchilar va talabalar uchun qulay interfeys, samarali boshqaruv va yuqori sifatli ta'lim resurslarini taqdim etadi.
               </p>
               <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                 <li>
